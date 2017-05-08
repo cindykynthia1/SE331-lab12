@@ -10,6 +10,12 @@ import {StudentsDataService} from "../../service/students-data.service";
 })
 export class StudentsAddComponent {
   student: any = {};
+  user:any ={};
+  roles:Array<string> = ['Admin','User'];
+
+  public refreshValue(value:any):void{
+    this.user.role = value.text;
+  }
 
   constructor(private studentDataService: StudentsDataService, private router: Router) {
   };
